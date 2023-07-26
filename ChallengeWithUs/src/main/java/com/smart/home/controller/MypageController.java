@@ -54,8 +54,7 @@ public class MypageController {
     @Autowired
     private MemberAchievementService MemAchiservice;
     
-    @Autowired
-    private BoardService Boservice;
+   
     
     // 세션에서 ID 받아오는 메소드 따로 정의
     // gmifs = Get Member Id From Session
