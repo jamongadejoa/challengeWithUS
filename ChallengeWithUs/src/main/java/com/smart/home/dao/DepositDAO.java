@@ -13,5 +13,5 @@ public interface DepositDAO {
     List<DepositDTO> getMyDepositTransactions(String memberId);
     
     // 예치금 충전하기 (이미 정의되어 있음)
-    chargeMyDeposit()
+    
 }
