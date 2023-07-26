@@ -17,7 +17,7 @@ import com.smart.home.dto.MemberDTO;
 import com.smart.home.service.MemberService;
 
 @Controller
-@RequestMapping("/yj")
+@RequestMapping("/register")
 public class MemberController {
 
 	@Autowired
@@ -26,59 +26,59 @@ public class MemberController {
 	@Autowired
 	private JavaMailSender mailSender;
 
-	// È¸¿ø°¡ÀÔ ÆûÀ¸·Î ÀÌµ¿ -> ¿Ï·á
-	@GetMapping("/MemberRegForm")
+	// íšŒì›ê°€ì… í¼ìœ¼ë¡œ ì´ë™ -> ì™„ë£Œ
+	@GetMapping("/registerJoin")
 	public String MemberRegForm() {
-		return "yj/MemberRegForm";
+		return "register/registerJoin";
 	}
 
-	// È¸¿ø°¡ÀÔ È®ÀÎ -> ¿Ï·á
-	@PostMapping("MemberRegOk")
-	public ModelAndView MemberRegOk(MemberDTO dto) {
+	// íšŒì›ê°€ì… í™•ì¸ -> ì™„ë£Œ
+	@PostMapping("registerJoinOk")
+	@ResponseBody
+	public String MemberRegOk(MemberDTO dto) {
 		int result = 0;
+		ModelAndView mav = new ModelAndView();
+		dto.setMemberAddr(dto.getZipcode(), dto.getZipcodeSub(), dto.getStreetAdr(), dto.getDetailAdr());
 		System.out.println(dto);
 		try {
 			result = service.MemberInsert(dto);
+
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("È¸¿ø°¡ÀÔ½ÇÆĞ" + e.getMessage());
-		}
-
-		ModelAndView mav = new ModelAndView();
+			System.out.println("íšŒì›ê°€ì…ì‹¤íŒ¨" + e.getMessage());		}	
 		if (result > 0) {
-			mav.setViewName("home");
+			return "success";
 		} else {
-			mav.setViewName("yj/MemberResult");
+			return "fail";
 		}
-		return mav;
 	}
 
-	// ·Î±×ÀÎ È­¸éÀ¸·Î ÀÌµ¿ -> ¿Ï·á
+	// ë¡œê·¸ì¸ í™”ë©´ìœ¼ë¡œ ì´ë™ -> ì™„ë£Œ
 	@GetMapping("/login")
 	public String login() {
-		return "yj/login";
+		return "register/LoginPage";
 	}
 
-	// ·Î±×ÀÎ -> ¿Ï·á
+	// ë¡œê·¸ì¸ -> ì™„ë£Œ
 	@PostMapping("/loginOk")
-	public ModelAndView loginOk(String memberId, String memberPwd, HttpSession session) {
+	@ResponseBody
+	public String loginOk(String memberId, String memberPwd, HttpSession session) {
 		System.out.println(memberId + memberPwd + "hi");
-		ModelAndView mav = new ModelAndView();
+	
 		try {
 			MemberDTO dto = service.loginOk(memberId, memberPwd);
 			session.setAttribute("logId", dto.getMemberId());
 			session.setAttribute("logName", dto.getMemberName());
 			session.setAttribute("logStatus", "Y");
-			mav.setViewName("home");
+			return "success";
 		} catch (Exception e) {
 			e.printStackTrace();
-			mav.setViewName("redirect:login");
+			return "failure";
 		}
-		return mav;
 
 	}
 
-	// ·Î±×¾Æ¿ô -> ¿Ï·á
+	// ë¡œê·¸ì•„ì›ƒ -> ì™„ë£Œ
 	@GetMapping("/logout")
 	public ModelAndView logout(HttpSession session) {
 		session.invalidate();
@@ -87,14 +87,14 @@ public class MemberController {
 		return mav;
 	}
 
-	// ¾ÆÀÌµğ Ã£±â È­¸éÀ¸·Î ÀÌµ¿ -> ¿Ï·á
+	// ì•„ì´ë”” ì°¾ê¸° í™”ë©´ìœ¼ë¡œ ì´ë™ -> ì™„ë£Œ
 	@GetMapping("/findIdForm")
 	public String findIdForm() {
-		return "yj/findIdForm";
+		return "register/FindID";
 	}
 
-	// ¾ÆÀÌµğ Ã£¾Æ¼­ ¾ÆÀÌµğ¸¸ ¹İÈ¯ -> ¿Ï·á
-	@PostMapping("/idSearchOk")
+	// ì•„ì´ë”” ì°¾ì•„ì„œ ì•„ì´ë””ë§Œ ë°˜í™˜ -> ì™„ë£Œ
+	@PostMapping("/findId")
 	public ModelAndView findId(String memberName, String memberEmail) {
 		String memberId = null;
 		ModelAndView mav = new ModelAndView();
@@ -102,18 +102,24 @@ public class MemberController {
 		try {
 			memberId = service.findId(memberName, memberEmail);
 			System.out.println(memberId);
-			mav.addObject("MemberId", memberId);
-			mav.setViewName("yj/returnMemberId");
-			return mav;
+
 		} catch (Exception e) {
 			e.printStackTrace();
-			mav.setViewName("yj/returnMemberId");
-			return mav;
 		}
+		
+		if (memberId == null | memberId == "") {
+			mav.addObject("message", "ì…ë ¥í•˜ì‹  ì´ë¦„ í˜¹ì€ ì´ë©”ì¼ì´ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
+			mav.setViewName("register/FindID");
+		} else {
+			mav.addObject("MemberId", memberId);
+			mav.setViewName("yj/returnMemberId");
+		}
+
+		return mav;
 	}
 
-	// ¾ÆÀÌµğ Áßº¹ Ã¼Å© -> ¿Ï·á
-	@GetMapping("/dupChk")
+	// ì•„ì´ë”” ì¤‘ë³µ ì²´í¬ -> ì™„ë£Œ
+	@GetMapping("/doubleChk")
 	@ResponseBody
 	public Integer dupChk(String id) {
 		Integer result = 0;
@@ -133,13 +139,13 @@ public class MemberController {
 		return result;
 	}
 
-	// ºñ¹Ğ¹øÈ£ Ã£±â ÆäÀÌÁö ÀÌµ¿ -> ¿Ï·á
-	@GetMapping("/findPwdForm")
+	// ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸° í˜ì´ì§€ ì´ë™ -> ì™„ë£Œ
+	@GetMapping("/pwSearch")
 	public String findPwdForm() {
-		return "yj/findPwd";
+		return "register/pwSearch";
 	}
 
-	// ºñ¹Ğ¹øÈ£ Ã£±â -> ¿Ï·á
+	// ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸° -> ì™„ë£Œ
 	@PostMapping("/findPwd")
 	@ResponseBody
 	public int findPwd(String memberId, String memberEmail) {
@@ -155,8 +161,8 @@ public class MemberController {
 		}
 		String setFrom = "winterer601@naver.com";
 		String toMail = memberEmail;
-		String title = "ºñ¹Ğ¹øÈ£ Ã£±â ÀÌ¸ŞÀÏ ÀÔ´Ï´Ù.";
-		String content = "È¨ÆäÀÌÁö¸¦ ¹æ¹®ÇØÁÖ¼Å¼­ °¨»çÇÕ´Ï´Ù." + "<br><br>" + "È¸¿ø´ÔÀÇ ºñ¹Ğ¹øÈ£´Â " + pwd + "ÀÔ´Ï´Ù.";
+		String title = "ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸° ì´ë©”ì¼ ì…ë‹ˆë‹¤.";
+		String content = "í™ˆí˜ì´ì§€ë¥¼ ë°©ë¬¸í•´ì£¼ì…”ì„œ ê°ì‚¬í•©ë‹ˆë‹¤." + "<br><br>" + "íšŒì›ë‹˜ì˜ ë¹„ë°€ë²ˆí˜¸ëŠ” " + pwd + "ì…ë‹ˆë‹¤.";
 		try {
 			MimeMessage message = mailSender.createMimeMessage();
 			MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
@@ -173,7 +179,7 @@ public class MemberController {
 		return result;
 	}
 
-	// È¸¿ø¼öÁ¤ ÆûÀ¸·Î ÀÌµ¿
+	// íšŒì›ìˆ˜ì • í¼ìœ¼ë¡œ ì´ë™ ->
 	@PostMapping("/memberUpdateForm")
 	public ModelAndView memeberUpdateForm(String logId) {
 		ModelAndView mav = new ModelAndView();
@@ -189,7 +195,7 @@ public class MemberController {
 		return mav;
 	}
 
-	// È¸¿ø°¡ÀÔ È®ÀÎ -> ¿Ï·á
+	// íšŒì›ì •ë³´ ìˆ˜ì • -> 
 	@PostMapping("MemberUpdateOk")
 	public ModelAndView MemberUpdateOk(MemberDTO dto) {
 		int result = 0;
@@ -198,7 +204,7 @@ public class MemberController {
 			result = service.memberUpdate(dto);
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("¼öÁ¤½ÇÆĞ" + e.getMessage());
+			System.out.println("ìˆ˜ì •ì‹¤íŒ¨" + e.getMessage());
 		}
 
 		ModelAndView mav = new ModelAndView();

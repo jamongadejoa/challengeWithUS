@@ -6,19 +6,25 @@ import com.smart.home.dto.ChallengesDTO;
 import com.smart.home.dto.ChallengesPagingDTO;
 
 public interface ChallengesDAO {
+	// 챌린지 리스트 조회 
 	public List<ChallengesDTO> ChallengesList(ChallengesPagingDTO pDTO);
 
 	public int ChallengesTotalRecord(ChallengesPagingDTO pDTO);
 	
 	public List<ChallengesDTO> ChallengesListMore(ChallengesPagingDTO pDTO);
-
+	
+	// 챌린지 등록
 	public int ChallengeInsert(ChallengesDTO dto);
 	
+	
 	public ChallengesDTO ChallengeSelect(int chalNo);
-
+	
+	
 	public String ChallengeFileSelect(int chalNo);
-
+	
+	
 	public int ChallengeUpdate(ChallengesDTO dto);
 	
+	// 챌린지 삭제 
 	public int ChallengeDelete(int chalNo);
 }
