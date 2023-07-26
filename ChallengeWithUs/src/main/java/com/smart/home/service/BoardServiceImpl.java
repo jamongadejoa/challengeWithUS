@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.smart.home.dao.BoardDAO;
 import com.smart.home.dto.BoardDTO;
 import com.smart.home.dto.PagingDTO;
+import com.smart.home.dto.QaBoardFileDTO;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -26,11 +27,6 @@ public class BoardServiceImpl implements BoardService {
 
 
 	@Override
-	public BoardDTO getBoard(int no) {
-		return dao.getBoard(no);
-	}
-
-	@Override
 	public void hitCount(int no) {
 		dao.hitCount(no);
 		
@@ -42,14 +38,37 @@ public class BoardServiceImpl implements BoardService {
 	}
 
 	@Override
-	public int boardDel(int no, String userid) {
-		return dao.boardDel(no, userid);
+	public int boardDel(int no) {
+		return dao.boardDel(no);
 	}
 
 	@Override
 	public int totalRecord(PagingDTO pDTO) {
 		return dao.totalRecord(pDTO);
 	}
+
+	@Override
+	public int qaboardfileDelete(int no) {
+		return dao.qaboardfileDelete(no);
+	}
+
+	@Override
+	public List<QaBoardFileDTO> qaboardfileSelect(int no) {
+		return dao.qaboardfileSelect(no);
+	}
+
+	@Override
+	public int qaboardfileInsert(List<QaBoardFileDTO> fileList) {
+		return dao.qaboardfileInsert(fileList);
+	}
+
+	@Override
+	public BoardDTO boardSelect(int no) {
+		return dao.boardSelect(no);
+	}
+
+
+
 
 
 	

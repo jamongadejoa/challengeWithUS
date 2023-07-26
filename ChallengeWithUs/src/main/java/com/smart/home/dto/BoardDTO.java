@@ -1,21 +1,19 @@
 package com.smart.home.dto;
 
-import lombok.AllArgsConstructor;
+import java.util.List;
+
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-
 public class BoardDTO {
-	private int QANo;
-	private String QATitle;
-	private String QAContent;
-	private String MemberId;
-	private String QADate;
-	private int QAHit;
-	
-	
-	
+	private int qaNo;
+	private String qaTitle;
+	private String qaContent;
+	private String memberId;
+	private String qaDate;
+	private int qaHit;
+	//삭제된 파일명
+	private List<String> delFile;
 	
 }
 

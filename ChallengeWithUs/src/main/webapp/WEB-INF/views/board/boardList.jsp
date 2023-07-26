@@ -8,11 +8,11 @@
 		height:40px;
 		line_height:40px;
 		border-bottom:1px solid #ddd;
-		width:10%;
+		width:15%;
 	}
 	
-	.board_list>li:nth-child(5n+1) {
-		width:50%;
+	.board_list>li:nth-child(5n+2) {
+		width:30%;
 		/* 말줄임표시 */
 		white-space:nowrap;/* 줄바꾸지 않기 */
 		overflow:hidden;/* 넘친 값 숨기기 */
@@ -41,7 +41,6 @@
 		</div>
 	<div>총 레코드 수 : ${pDTO.totalRecord }개</div>
 	<ul class="board_list">
-		
 		<li>QA글번호</li>
 		<li>QA글제목</li>
 		<li>회원아이디</li>
@@ -49,11 +48,11 @@
 		<li>QA조회수</li>
 		<!--       변수       데이터(리스트)->modelandview에 설정한 변수 -->
 		<c:forEach var="dto" items="${list}">
-			<li>${dto.QANo }</li>
-			<li><a href='/home/board/qaBoardView?no=${dto.QANo }&nowPage=${pDTO.nowPage}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${dto.QATitle}</a></li>
+			<li>${dto.qaNo }</li>
+			<li><a href='/home/board/qaBoardView?no=${dto.qaNo }&nowPage=${pDTO.nowPage}<c:if test="${pDTO.searchWord!=null}">&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>${dto.qaTitle}</a></li>
 			<li>${dto.memberId}</li>
-			<li>${dto.QADate }</li>
-			<li>${dto.QAHit }</li>
+			<li>${dto.qaDate }</li>
+			<li>${dto.qaHit }</li>
 		</c:forEach>
 		
 	</ul>	
