@@ -161,11 +161,13 @@
 			</c:forEach>
 		</li>
 	</ul>
+	<c:if test="${logId==dto.memberId}">
 	<div>
 		<!-- session의 로그인아이디(logId)와 현재 글의 글쓴이(userId)가 같으면 수정, 삭제 표시한다. -->
 			<a href="/home/board/qaBoardEdit?no=${dto.qaNo}">수정</a>
 			<a href="javascript:delChk()">삭제</a>
 	</div>
+	</c:if>
 	<!-- 댓글달기 -->
 	<style>
 		#qacomments{width:500px; height:80px;}

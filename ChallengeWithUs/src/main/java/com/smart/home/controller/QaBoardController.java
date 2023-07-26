@@ -148,7 +148,7 @@ public class QaBoardController {
 	}catch(Exception e) {
 		e.printStackTrace();
 		//원글 지우기(dto.no)
-		service.boardDel(dto.getQaNo());
+		service.boardDel(dto.getQaNo(), dto.getMemberId());
 		//파일명 지우기(dto.no)
 		service.qaboardfileDelete(dto.getQaNo());
 		//파일 삭제(upFileList)
@@ -306,7 +306,7 @@ public class QaBoardController {
 		   int delCount = service.qaboardfileDelete(no);
 		   
 		   //3. 원글(DB삭제)
-		   int result = service.boardDel(no);
+			int result = service.boardDel(no, (String)session.getAttribute("logId"));
 		   
 		   //4. 첨부파일 삭제
 		   for(QaBoardFileDTO dto : fileList) {
