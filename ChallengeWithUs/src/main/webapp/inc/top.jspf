@@ -20,10 +20,10 @@
                 <img class="line" alt="Line" src="<%= request.getContextPath() %>/imgs/line.png" />
             </div>
             <div class="element-wrapper">
-                <div class="element"><a href="/home/join">회원가입</a></div>
+                <div class="element">회원가입</div>
             </div>
             <div class="div-wrapper">
-                <div class="element"><a href="/home/login">로그인</a></div>
+                <div class="element">로그인</div>
             </div>
         </div>
         <div class="frame-wrapper">
@@ -32,6 +32,6 @@
                 <img class="img" alt="Line" src="<%= request.getContextPath() %>/imgs/under.png" />
             </div>
         </div>
-        <a href="/home"><img class="logo" alt="Logo" src="<%= request.getContextPath() %>/imgs/logo.png" /></a>
+        <img class="logo" alt="Logo" src="<%= request.getContextPath() %>/imgs/logo.png" />
     </div>
 </nav>

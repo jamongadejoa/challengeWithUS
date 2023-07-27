@@ -1,0 +1,288 @@
+@charset "UTF-8";
+
+
+body{
+	margin: 0px;
+	width:100%; 
+	display:flex; 
+	flex-direction: column; 
+	align-content: center;
+	align-items: center;
+	
+	
+}
+
+.myChallengeConbox{
+	display: flex;
+	align-content: center;
+	flex-direction: row; 
+}
+
+.myChallengebox {
+  display: flex;
+  align-content: center;
+  width: 1200px;
+  height: 296px;
+  position: relative;
+  background: white;
+  box-shadow: 8px 13px 44px -6px #DFDBF6;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 24px; 
+  margin: 24px; 
+}
+
+/* Styling for the LatestTransaction div */
+.myChallenge1{
+  height: 69.74px;
+  position: absolute;
+  top: 170px;
+  left:300px; 
+
+}
+
+.myChallenge2 {
+  height: 69.74px;
+  position: absolute;
+  top: 170px;
+  left:600px; 
+
+}
+
+/* Styling for the Label and Date inside LatestTransaction div */
+.ex, .lv {
+  font-size: 25px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.ex {
+  color: #A1A0BD;
+}
+
+.lv {
+  color: #4FD18B;
+  font-size: 40px;
+}
+
+/* Styling for the WalletAmount div */
+.myChallenge-right {
+  width: 410px;
+  height: 374px;
+  position: absolute;
+  left: 926px;
+  top: -22px;
+  background: #1C43BE;
+  border-radius: 155px;
+}
+
+/* Styling for the SmhrdId and Membership inside WalletAmount div */
+.myChallengeName, .designtext{
+  position: absolute;
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  word-wrap: break-word;
+}
+
+.myChallengeName{
+  left: 80px;
+  top: 150px;
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.designtext {
+  left: 82px;
+  top: 226px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Styling for the Ellipse5 div */
+.myChallengeEllipse5 {
+  width: 309px;
+  height: 309px;
+  left: -31px;
+  top: -109px;
+  position: absolute;
+  background: rgba(51, 102, 255, 0.50);
+  border-radius: 9999px;
+}
+
+
+
+/* Styling for the ChallengeTitle inside LeftSide div */
+.myChallengeTitle {
+  color: black;
+  position: absolute;
+  top:30px;
+  left: 30px;
+  font-size: 50px;
+  font-weight: 700;
+  
+}
+
+
+.myChallenge2box {
+  width: 1200px;
+  height: 100px;
+  position: relative;
+  background: white;
+  box-shadow: 8px 13px 44px -6px #DFDBF6;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.myChallenge2box-Ellipse5 {
+  width: 309px;
+  height: 309px;
+  position: absolute;
+  top: -1px;
+  left: 450px;
+  background: rgba(79, 212, 139, 0.50);
+  border-radius: 9999px;
+}
+
+.center {
+  width: 247px;
+  height: 100px;
+  position: absolute;
+  top: -38px;
+  left: 481px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  position: absolute; 
+  width: 312px;
+  top: 50px; 
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 700;
+  word-wrap: break-word;
+  color: black;
+}
+
+.cardtable{
+	
+	margin: 0px 0px 24px 0px; 
+}
+
+.ChallengeCard {
+  width: 384px;
+  height: 548px;
+  position:relative;
+  top:50px; 
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex; 
+  padding: 24px; 
+
+}
+
+.ChallengeCard2 {
+  width: 384px;
+  height: 548px;
+  position:relative;
+  top:50px; 
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: inline-flex; 
+  padding: 24px; 
+
+}
+
+/* Fullcard */
+.Fullcard {
+  align-self: stretch;
+  flex: 1 1 0;
+  background: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.10);
+  border-radius: 8px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+}
+
+/* Image2 */
+.Image2 {
+  align-self: stretch;
+  flex: 1 1 0;
+  opacity: 30%; 
+}
+
+/* Content */
+.Content {
+  align-self: stretch;
+  height: 264px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  display: flex;
+}
+
+/* Title */
+.Title {
+  align-self: stretch;
+  color: black;
+  font-size: 36px;
+  font-family: Noto Sans KR;
+  font-weight: 400;
+  line-height: 26px;
+  word-wrap: break-word;
+}
+
+/* Description */
+.Description {
+  align-self: stretch;
+  color: #121212;
+  font-size: 18px;
+  font-family: Noto Sans KR;
+  font-weight: 400;
+  line-height: 24px;
+  word-wrap: break-word;
+}
+
+/* Button */
+.Button {
+  align-self: stretch;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #3366FF;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  display: inline-flex;	
+}
+
+
+/* ButtonText */
+Button {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-family: Noto Sans KR;
+  font-weight: 700;
+  line-height: 26px;
+  word-wrap: break-word;
+  border: 0;
+  background-color: transparent;
+  
+}

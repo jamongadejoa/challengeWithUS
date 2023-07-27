@@ -12,22 +12,18 @@
     </div>
   </div>
   
-  
- <div class="account-container">
-  <div class="account-LatestTransaction">
-    <div class="amount">10000원</div>
-    <div class="type">예치금</div>
+
+<div class="WalletContainer">
+  <div class="Walletaction">
+    <div class="WalletAmount">10000원</div>
+    <div class="WalletType">예치금</div>
   </div>
-  <div class="account-WalletAmount">
-    <div class="charge-text">충전하기</div>
-    <div class="challenge-text">challenge with us</div>
+  <div class="accountAmount">
+    <div class="ChargeText">충전하기</div>
+    <div class="ChallengeWithUs">challenge with us</div>
   </div>
-  <div class="account-Ellipse5"></div>
-  <div class="LeftSide">
-    <div class="username">김윤정</div>
+  <div class="WalletEllipse5"></div>
+  <div class="WalletLeftSide">
+    <div class="WalletUserName">김윤정</div>
   </div>
 </div>
-
-
-
-

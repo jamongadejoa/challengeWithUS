@@ -19,6 +19,7 @@ body{
   box-shadow: 8px 13px 44px -6px #DFDBF6;
   border-radius: 20px;
   overflow: hidden;
+  margin: 24px; 
 }
 
 .Ellipse5 {
@@ -56,7 +57,8 @@ body{
 }
 
 
-.account-container {
+
+.WalletContainer {
   width: 1200px;
   height: 250px;
   position: relative;
@@ -64,20 +66,21 @@ body{
   box-shadow: 8px 13px 44px -6px #DFDBF6;
   border-radius: 20px;
   overflow: hidden;
+  margin: 24px; 
 }
 
-.account-LatestTransaction {
+.Walletsaction {
   height: 156px;
   left: 463px;
   top: 52px;
   position: absolute;
 }
 
-.account-LatestTransaction .amount {
+.WalletAmount {
   width: 275px;
   height: 89.40px;
-  left: 0px;
-  top: 66.60px;
+  left: 460px;
+  top: 100px;
   position: absolute;
   text-align: center;
   color: #4FD18B;
@@ -87,11 +90,11 @@ body{
   word-wrap: break-word;
 }
 
-.account-LatestTransaction .type {
+.WalletType {
   width: 210.95px;
   height: 57.88px;
-  left: 32px;
-  top: 0px;
+  left: 490px;
+  top: 50px;
   position: absolute;
   text-align: center;
   color: #A1A0BD;
@@ -101,13 +104,12 @@ body{
   word-wrap: break-word;
 }
 
-.account-WalletAmount {
+.accountAmount {
   width: 300px;
   padding-top: 105px;
   padding-bottom: 105px;
-  padding-left: 24px;
   padding-right: 80px;
-  left: 967px;
+  left: 930px;
   top: -27px;
   position: absolute;
   background: #1C43BE;
@@ -116,29 +118,35 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  display: inline-flex;
+  display: flex;
 }
 
-.account-WalletAmount .charge-text {
+.ChargeText {
   color: white;
-  font-size: 50px;
+  font-size: 40px;
   font-family: Noto Sans KR;
   font-weight: 700;
   word-wrap: break-word;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  
 }
 
-.account-WalletAmount .challenge-text {
+.ChallengeWithUs {
   opacity: 0.50;
   color: white;
-  font-size: 15px;
+  font-size: 10px;
   font-family: Noto Sans KR;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 2.55px;
   word-wrap: break-word;
+ 
 }
 
-.account-Ellipse5 {
+.WalletEllipse5 {
   width: 309px;
   height: 309px;
   left: -31px;
@@ -148,7 +156,7 @@ body{
   border-radius: 9999px;
 }
 
-.LeftSide {
+.WalletLeftSide {
   width: 189px;
   height: 107px;
   left: 30px;
@@ -161,11 +169,12 @@ body{
   display: inline-flex;
 }
 
-.LeftSide .username {
+.WalletUserName {
   color: black;
   font-size: 60px;
   font-family: Noto Sans KR;
   font-weight: 700;
   word-wrap: break-word;
 }
+
 

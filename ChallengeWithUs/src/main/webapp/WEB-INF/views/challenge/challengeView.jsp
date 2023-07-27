@@ -73,4 +73,19 @@
       챌린지 인증 안내
     </div>
   </div>
+  
+  <div class="replybox">
+  <div class="message-box"></div>
+  <div class="CheckButton" style="top: 0px; left: 950px;">
+    <div class="button-text">등록</div>
+  </div>
+  <div class="CheckButton" style="top: 70px; left: 950px;">
+    <div class="button-text">수정</div>
+  </div>
+  <div class="CheckButton" style="top:70px; left: 1080px;">
+    <div class="button-text">삭제</div>
+  </div>
+  <div class="message-text" >관리자입니다. 답변 드려요</div>
+  <div class="username" >smhrd</div>
+</div>
 </p>

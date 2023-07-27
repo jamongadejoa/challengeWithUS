@@ -95,48 +95,13 @@ public class HomeController {
 		return mav; 
 	}
 	
-	
-	@GetMapping("/join")
-	public ModelAndView join() {
+	@GetMapping("/myChallenge")
+	public ModelAndView myChallenge() {
 		
 		//ModelAndView
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("register/registerJoin");
+		mav.setViewName("challenge/myChallenge");
 		
 		return mav; 
 	}
-	
-	
-	@GetMapping("/login")
-	public ModelAndView login() {
-		
-		//ModelAndView
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("register/LoginPage");
-		
-		return mav; 
-	}
-	
-	@GetMapping("/FindId")
-	public ModelAndView FindId() {
-		
-		//ModelAndView
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("register/FindID");
-		
-		return mav; 
-	}
-	
-	
-	@GetMapping("/pwSearch")
-	public ModelAndView pwSearch() {
-		
-		//ModelAndView
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("register/pwSearch");
-		
-		return mav; 
-	}
-	
-	
 }

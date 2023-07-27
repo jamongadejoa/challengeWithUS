@@ -8,7 +8,7 @@
 <div class="ChallengeBox-table">
   <div class="ChallengeBox1">
             <div class="WalletAmount"></div>
-            <div class="Title">나의 챌린지</div>
+            <div class="Title"><a href="/home/myChallenge">나의 챌린지</a></div>
         </div>
         <div class="ChallengeBox2">
             <div class="WalletAmount"></div>
