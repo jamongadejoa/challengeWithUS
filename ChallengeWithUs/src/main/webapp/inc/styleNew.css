@@ -72,6 +72,23 @@ nav {
 
 .navibar-login .nav-buttons {
 	margin-left: auto; /* Push nav-buttons to the rightmost position */
+	display:flex;
+	align-items: center;
+	
+}
+
+.user-info #logName {
+    margin-left: auto; /* 원하는 만큼 조정하여 버튼과 "user-info" 사이의 간격을 조절합니다. */
+    color: #fff;
+}
+
+.user-info #text1{
+	margin-left:15px;
+}
+
+.navibar-login .wrap2{
+	display:flex;
+	justify-content: center;
 }
 
 .navibar-login .nav-buttons button {

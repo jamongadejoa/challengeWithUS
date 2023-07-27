@@ -22,14 +22,42 @@ a {
 	text-decoration-line: none !important;
 	color: #fff;
 }
-.navibar-login .nav-buttons #join{
-	font-family: "Noto Sans KR-Regular", Helvetica;
-	font-size: 18px;
-	font-weight: 400;
-	letter-spacing: 0;
-	line-height: 18px;
-	color: #151d20;
+.navibar-login .wrap2{
+	display:flex;
+	justify-content: center;
+	margin-left: auto;
 }
+
+.navibar-login .user-info{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 1em;
+}
+
+.user-info #text1{
+	display:flex;
+	justify-content: center;
+	text-align: center;
+	align-items:center;
+	font-family: "Noto Sans KR", Helvetica;
+	font-size: 20px;
+	color:#fff;
+	font-weight: bold;
+}
+
+.user-info #logName{
+	font-family: "Noto Sans KR", Helvetica;
+	font-size: 20px;
+	letter-spacing: 1px;
+	text-align:center;
+	font-weight: bold;
+	color:#fff;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
 </style>
 </head>
 
@@ -45,15 +73,22 @@ a {
 				<img class="img" alt="Line" src="/home/imgs/under.png">
 			</div>
 			<!-- Move nav-buttons inside the frame div -->
-			<div class="nav-buttons">
-				<c:if test="${logId==null }">
-					<button onclick="location.pathname='home/register/registerJoin'">회원가입</button>
-					<button onclick="location.pathname='home/register/login'">로그인</button>
-				</c:if>
+			<div class="wrap2">
 				<c:if test="${logId!=null }">
-					<button onclick="location.pathname='home/mypage'">마이페이지</button>
-					<button onclick="location.pathname='home/register/logout'">로그아웃</button>
+					<div class="user-info">
+						<div id="logName">${logName}님 도전을 응원합니다</div>
+					</div>
 				</c:if>
+				<div class="nav-buttons">
+					<c:if test="${logId==null }">
+						<button onclick="location.pathname='home/register/registerJoin'">회원가입</button>
+						<button onclick="location.pathname='home/register/login'">로그인</button>
+					</c:if>
+					<c:if test="${logId!=null }">
+						<button onclick="location.pathname='home/mypage'">마이페이지</button>
+						<button onclick="location.pathname='home/register/logout'">로그아웃</button>
+					</c:if>
+				</div>
 
 			</div>
 		</div>
