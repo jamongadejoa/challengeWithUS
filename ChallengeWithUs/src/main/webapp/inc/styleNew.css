@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+/* nav 스타일 */
+/* nav 스타일 */
+nav {
+	background-color: #3366ff;
+	height: 80px;
+	display: flex;
+	justify-content: center; /* Center the .navibar-login horizontally */
+	align-items: center;
+	position: relative;
+}
+
+.navibar-login {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	max-width: 1200px; /* Limit the maximum width of .navibar-login */
+	width: 100%; /* Set .navibar-login width to 100% of nav */
+}
+
+.navibar-login .logo {
+	height: 30px;
+	object-fit: cover;
+	cursor: pointer;
+}
+
+.navibar-login .frame {
+	display: flex;
+	align-items: center;
+	gap: 24px;
+	flex: 1;
+	/* Expand to take available space between logo and nav-buttons */
+}
+
+.navibar-login .line {
+	height: 24px;
+	width: 1px;
+	object-fit: cover;
+}
+
+.navibar-login .frame-3 {
+	align-items: center;
+	align-self: stretch;
+	display: inline-flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 8px 0px 0px;
+	position: absolute;
+}
+
+.navibar-login .challenge {
+	color: #fbfbfb;
+	font-family: "Noto Sans KR", Helvetica;
+	font-size: 20px;
+	font-weight: 700;
+	letter-spacing: 0;
+	line-height: 20px;
+	margin-top: -1px;
+	position: relative;
+	white-space: nowrap;
+	width: fit-content;
+	cursor: pointer;
+}
+
+.navibar-login .img {
+	height: 3px;
+	position: relative;
+	width: 100px;
+}
+
+.navibar-login .nav-buttons {
+	margin-left: auto; /* Push nav-buttons to the rightmost position */
+}
+
+.navibar-login .nav-buttons button {
+	padding: 10px 20px; /* 이전과 동일한 padding 값으로 수정 */
+	background-color: #fbfbfb;
+	color: #151d20;
+	border: none;
+	border-radius: 32px;
+	cursor: pointer;
+	font-family: "Noto Sans KR-Regular", Helvetica;
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 18px;
+	margin-right: 24px;
+}
+.navibar-login .nav-buttons #join{
+	font-family: "Noto Sans KR-Regular", Helvetica;
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: 18px;
+	color: #151d20;
+}
+
+.navibar-login .nav-buttons button:hover {
+	background-color: #f2f2f2;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navibar-login .nav-buttons button:active {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), inset 0 3px 10px
+		rgba(0, 0, 0, 0.6);
+}
+@media screen and (max-width: 676px) {
+	.navibar-login .nav-buttons{
+		top:46px;
+		position:relative;
+	}
+	nav{
+		padding-bottom:2em;
+	}
+	
+}
+@media screen and (max-width: 488px) {
+	.navibar-login .nav-buttons{
+		top:46px;
+		position:relative;
+	}
+	nav{
+		padding-bottom:3em;
+	}
+	
+} 
+
+/*
+*
+*
+*
+ */
+
+/* footer 스타일 */
+.footer {
+  align-items: flex-start;
+  background-color: #3366ff;
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  margin: 0px;
+  
+}
+
+.footer .div {
+  align-items: center;
+  background-color: #3366ff;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  height: 226.27px;
+  padding-top: 15px;
+  position: relative;
+  width: 100%;
+  
+  
+}
+
+.footer .logo {
+  height: 41.27px;
+  position: relative;
+  width: 238px;
+  cursor: pointer;
+}
+
+.footer .frame {
+  align-items: center;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 100px;
+  position: relative;
+}
+
+.footer .frame-2 {
+  align-items: flex-start;
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 20px;
+  position: relative;
+}
+
+.footer .text-wrapper {
+  color: #ffffff;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+  margin-top: -1px;
+  position: relative;
+  width: fit-content;
+}
+
+.footer .copyrights-wrapper {
+  align-items: center;
+  background-color: #3366ff;
+  display: flex;
+  gap: 63px;
+  height: 22px;
+  padding: 8px 0px;
+  position: relative;
+  width: 186px;
+}
+
+.footer .copyrights {
+  color: #ffffff;
+  flex: 1;
+  font-family: "Noto Sans KR", Helvetica;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 27px;
+  margin-bottom: -9.5px;
+  margin-top: -11.5px;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.footer .bottom-text {
+	color: #ffffff;
+	font-family: "Noto Sans KR", Helvetica;
+	font-size: 20px;
+	font-weight: 400;
+	letter-spacing: 0;
+	line-height: normal;
+	position: relative;
+	white-space: pre-wrap;
+	cursor:pointer;
+}
