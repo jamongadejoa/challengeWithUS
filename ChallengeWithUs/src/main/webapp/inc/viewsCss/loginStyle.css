@@ -121,6 +121,7 @@
 	top: 290px;
 	white-space: nowrap;
 	width: 102px;
+	cursor:pointer;
 }
 
 .login-light .element-4 {

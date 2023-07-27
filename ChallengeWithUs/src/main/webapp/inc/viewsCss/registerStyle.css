@@ -9,6 +9,9 @@
 	position: relative;
 	width: 754px;
 	margin: 0 auto;
+	display:flex;
+	align-items: center;
+	right:15px;
 }
 
 .register-form .sign_font {
@@ -376,32 +379,34 @@
 	width: fit-content;
 }
 
-.register-form .login-button {
+.register-form .login-button button{
 	align-items: center;
 	background-color: #3366ff;
 	border-radius: 20px;
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
-	height: 30px;
+	height: 55px;
 	justify-content: center;
-	left: 213px;
-	padding: 10px;
+	left: 155px;
+	margin: 1% 0 0 0;
 	position: absolute;
-	top: 757px;
-	width: 340px;
+	top: 240px;
+	width: 364px;
 	cursor: pointer;
-}
-
-.register-form .check_text {
-	color: #ffffff;
-	font-family : "Noto Sans KR-Bold", Helvetica;
+	border: none;
+	font-family: "Noto Sans KR-Bold", Helvetica;
 	font-size: 25px;
 	font-weight: 700;
-	letter-spacing: 0;
-	line-height: normal;
-	margin-top: -2.5px;
-	position: relative;
-	width: fit-content;
-	font-family: "Noto Sans KR-Bold", Helvetica;
+	color: #ffffff;
+}
+
+.register-form .login-button button:hover {
+	background-color: #2650C0; 
+}
+
+.register-form .login-button button:active {
+	background-color: #20409D; 
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), inset 0 3px 10px
+		rgba(0, 0, 0, 0.6);
 }

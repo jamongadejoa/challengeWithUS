@@ -236,21 +236,22 @@
 				</div>
 				<div class="input-wrapper">
 					<input type="text" class="username-fill" placeholder="아이디를 입력해주세요"
-						name="memberId" required />
+						id="memberId" required />
 					<div class="error-wrapper">
 						<div class="error-message" id="idMsg">*아이디는 필수 입력입니다</div>
 					</div>
 				</div>
 				<div class="input-wrapper">
 					<input type="email" class="email-fill" placeholder="이메일을 입력해주세요"
-						name="memberEmail" required />
+						id="memberEmail" required />
 					<div class="error-wrapper">
 						<div class="error-message" id="emailMsg">*이메일은 필수 입력입니다</div>
 					</div>
 				</div>
 				<div class="element-2">이메일</div>
 				<div class="element-3">아이디</div>
-				<div class="element-4" onclick="location='FindID'">아이디 찾기</div>
+				<div class="element-4"
+					onclick="location.pathname='home/register/findIdForm'">아이디 찾기</div>
 				<div class="element-5">회원가입시 등록한 정보를 입력해주세요</div>
 				<div class="element-6">아이디가 기억나지 않는다면?</div>
 			</div>
@@ -258,27 +259,6 @@
 		</div>
 	</form>
 	<script>
-	const inputs = document.querySelectorAll('.pwSearchWrap input[required]');
-
-	inputs.forEach(input => {
-	  input.addEventListener('blur', () => {
-	    const errorWrapper = input.parentElement.querySelector('.error-wrapper');
-	    const errorMessage = errorWrapper.querySelector('.error-message');
-	    if (input.value.trim() === '') {
-	      input.classList.add('error');
-	      errorWrapper.classList.add('error-wrapper');
-	      errorMessage.style.display = 'block';
-	      input.style.borderColor = 'red';
-	    } else {
-	      input.classList.remove('error');
-	      errorWrapper.classList.remove('error-wrapper');
-	      errorMessage.style.display = 'none';
-	      input.style.borderColor = '#3366ff';
-	    }
-	  });
-	});	
-	
-	
 	$("#findIdBtn").on("click", function(event){
 		event.preventDefault();
 		var formData = $("#findIdForm").serialize();
@@ -292,7 +272,7 @@
 			alert("이메일을 입력해주세요")
 			return false;
 		}
-		console.log(MemberId, MemberEmail)
+		console.log(MemberId, MemberEmail);
 		
 		$.ajax({
 			data:formData,
@@ -313,5 +293,30 @@
 		})
 		
 	})
-	</script>
+</script>
+	<script>
+const checkRequiredFields = () => {
+	const inputs = document.querySelectorAll('.pwSearchWrap input[required]');
+
+	inputs.forEach(input => {
+	  input.addEventListener('blur', () => {
+	    const errorWrapper = input.parentElement.querySelector('.error-wrapper');
+	    const errorMessage = errorWrapper.querySelector('.error-message');
+	    if (input.value.trim() === '') {
+	      input.classList.add('error');
+	      errorWrapper.classList.add('error-wrapper');
+	      errorMessage.style.display = 'block';
+	      input.style.borderColor = 'red';
+	    } else {
+	      input.classList.remove('error');
+	      errorWrapper.classList.remove('error-wrapper');
+	      errorMessage.style.display = 'none';
+	      input.style.borderColor = '#3366ff';
+	    }
+	  });
+	});	
+}
+checkRequiredFields();
+
+</script>
 </body>
