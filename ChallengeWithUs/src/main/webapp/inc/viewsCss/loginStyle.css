@@ -163,6 +163,8 @@
 	width: 212px;
 }
 
+
+
 @media (max-width: 400px) {
   .login-light {
     width: 100%;
@@ -170,3 +172,54 @@
     padding: 0;
   }
 }
+
+
+.login-light #idMsg {
+	display: none;
+	color: red;
+	font-size: 12px;
+	position: absolute;
+	width: 164px;
+	top: 5px;
+}
+
+.login-light #pwdMsg {
+	display: none;
+	color: red;
+	font-size: 12px;
+	position: absolute;
+	width: 164px;
+	top: 8em;
+}
+
+.login-light input:focus:invalid {
+	border: 1px solid red;
+}
+
+.login-light input.error:focus {
+	border: 1px solid red;
+}
+
+.login-light input.error+.error-message {
+	display: none;
+}
+
+.login-light input.error:invalid+.error-message {
+	display: block;
+	position: absolute;
+	left: 0;
+}
+
+.login-light .input-wrapper {
+	position: relative;
+}
+
+.login-light .error-wrapper {
+	position: relative;
+	display: flex;
+	left: 24%;
+	top: 6em;
+}
+
+
+

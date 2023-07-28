@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+body{
+	margin:0 auto;
+}
+
 /* nav 스타일 */
 /* nav 스타일 */
 nav {
@@ -247,4 +251,40 @@ nav {
 	position: relative;
 	white-space: pre-wrap;
 	cursor:pointer;
+}
+
+.navibar-login .wrap2{
+	display:flex;
+	justify-content: center;
+	margin-left: auto;
+}
+
+.navibar-login .user-info{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin-right: 1em;
+}
+
+.user-info #text1{
+	display:flex;
+	justify-content: center;
+	text-align: center;
+	align-items:center;
+	font-family: "Noto Sans KR", Helvetica;
+	font-size: 20px;
+	color:#fff;
+	font-weight: bold;
+}
+
+.user-info #logName{
+	font-family: "Noto Sans KR", Helvetica;
+	font-size: 20px;
+	letter-spacing: 1px;
+	text-align:center;
+	font-weight: bold;
+	color:#fff;
+	position: relative;
+	display: flex;
+	justify-content: center;
 }
