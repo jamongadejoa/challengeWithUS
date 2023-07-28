@@ -7,93 +7,72 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/inc/viewsCss/styleViews.css"
+	href="${pageContext.request.contextPath}/inc/viewsCss/styleViews.css?v=230728"
 	type="text/css" />
 
-<div>
-	<a href="/home/mypage">마이페이지</a>
-</div>
-<div>
-	<a href="/home/challengeWrite">챌린지등록</a>
-</div>
 
-<div class="cardtable">
-	<div class="ChallengeCard">
-		<div class="Fullcard">
-			<img class="Image2" src="<%=request.getContextPath()%>/imgs/card.jpg" />
-			<div class="Content">
-				<div class="Title">미라클 모닝 챌린지</div>
-				<div class="Description">아침에 일찍 일어나고 싶은데 늘 실패하는 분들을 위해 준비한 챌린지
-					입니다. 부지런한 생활습관을 만들고 싶은 분들은 이 챌린지에 도전하세요</div>
-				<div class="Button">
-					<button>
-						<a href="/home/challenge">GO</a>
-					</button>
+
+
+<main class="homepage">
+	<c:if test="${logId!=null }">
+		<div class="chBtn">
+			<button onclick="location.pathname='/home/challengeWrite'">챌린지등록</button>
+		</div>
+	</c:if>
+	
+		<div class="ChallengeCard">
+			<div class="Fullcard">
+				<img class="Image2"
+					src="<%=request.getContextPath()%>/imgs/card.jpg" />
+				<div class="Content">
+					<div class="Title">미라클 모닝 챌린지</div>
+					<div class="Description">아침에 일찍 일어나고 싶은데 늘 실패하는 분들을 위해 준비한
+						챌린지 입니다. 부지런한 생활습관을 만들고 싶은 분들은 이 챌린지에 도전하세요</div>
+					<div class="Button" onclick="location.pathname='home/challenge'">
+						<button>GO</button>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
+		
 
-	<div class="ChallengeCard">
-		<div class="Fullcard">
-			<img class="Image2" src="<%=request.getContextPath()%>/imgs/card.jpg" />
-			<div class="Content">
-				<div class="Title">미라클 모닝 챌린지</div>
-				<div class="Description">아침에 일찍 일어나고 싶은데 늘 실패하는 분들을 위해 준비한 챌린지
-					입니다. 부지런한 생활습관을 만들고 싶은 분들은 이 챌린지에 도전하세요</div>
-				<div class="Button">
-					<button>GO</button>
+	<c:forEach var="dto" items="${list}" varStatus="status">
+
+		<div class="ChallengeCard">
+			<div class="Fullcard">
+				<c:choose>
+					<c:when
+						test="${dto.chalFilename.endsWith('.jpg') || dto.chalFilename.endsWith('.png')}">
+						<img class="Image2"
+							src="<%=request.getContextPath()%>/upload/${dto.chalFilename}" />
+					</c:when>
+					<c:otherwise>
+						<img class="Image2"
+							src="<%=request.getContextPath()%>/imgs/card.jpg" />
+					</c:otherwise>
+				</c:choose>
+				<div class="Content">
+					<div class="Title">${dto.chalTitle }</div>
+					<div class="Description">${dto.chalContent }</div>
+					<div class="Button">
+						<button>
+							<a
+								href='/home/ChallengeView?chalNo=${dto.chalNo}&nowPage=${pDTO.nowPage}<c:if test="${pDTO.searchWord!=null}">
+				&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>GO</a>
+						</button>
+						<c:if test="${status.last}">
+							<script>
+								let lastNo = $
+								{
+									dto.chalNo
+								}; // 마지막 DTO의 chalNo를 JavaScript 변수 lastNo에 저장
+							</script>
+						</c:if>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="ChallengeCard">
-		<div class="Fullcard">
-			<img class="Image2" src="<%=request.getContextPath()%>/imgs/card.jpg" />
-			<div class="Content">
-				<div class="Title">미라클 모닝 챌린지</div>
-				<div class="Description">아침에 일찍 일어나고 싶은데 늘 실패하는 분들을 위해 준비한 챌린지
-					입니다. 부지런한 생활습관을 만들고 싶은 분들은 이 챌린지에 도전하세요</div>
-				<div class="Button">
-					<button>GO</button>
-				</div>
-			</div>
-		</div>
-	</div>
-
-</div>
-
-
-
-<c:forEach var="dto" items="${list}" varStatus="status">
-	<div class="ChallengeCard">
-		<div class="Fullcard">
-		<c:choose>
-				<c:when
-					test="${dto.chalFilename.endsWith('.jpg') || dto.chalFilename.endsWith('.png')}">
-					<img
-						class="Image2" src="<%=request.getContextPath()%>/upload/${dto.chalFilename}" />
-				</c:when>
-				<c:otherwise>
-					<img class="Image2" src="<%=request.getContextPath()%>/imgs/card.jpg" />
-				</c:otherwise>
-			</c:choose>
-			<div class="Content">
-				<div class="Title">${dto.chalTitle }</div>
-				<div class="Description">${dto.chalContent }</div>
-				<div class="Button">
-					<button><a href='/home/ChallengeView?chalNo=${dto.chalNo}&nowPage=${pDTO.nowPage}<c:if test="${pDTO.searchWord!=null}">
-				&searchKey=${pDTO.searchKey}&searchWord=${pDTO.searchWord}</c:if>'>GO</a></button>
-				<c:if test="${status.last}">
-				<script>
-                let lastNo = ${dto.chalNo}; // 마지막 DTO의 chalNo를 JavaScript 변수 lastNo에 저장
-            </script>
-			</c:if>
-				</div>
-			</div>
-		</div>
-	</div>
-</c:forEach>
-</div>
+	</c:forEach>
+</main>
