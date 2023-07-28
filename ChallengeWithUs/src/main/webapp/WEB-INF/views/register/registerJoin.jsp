@@ -3,42 +3,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <head>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/inc/viewsCss/registerStyle.css"
+	href="${pageContext.request.contextPath}/inc/viewsCss/registerStyle.css?v=230728"
 	type="text/css" />
-	
-<style>
-.register-form .login-button button{
-	align-items: center;
-	background-color: #3366ff;
-	border-radius: 20px;
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	height: 55px;
-	justify-content: center;
-	left: 155px;
-	margin: 1% 0 0 0;
-	position: absolute;
-	top: 240px;
-	width: 364px;
-	cursor: pointer;
-	border: none;
-	font-family: "Noto Sans KR-Bold", Helvetica;
-	font-size: 25px;
-	font-weight: 700;
-	color: #ffffff;
-}
-
-.register-form .login-button button:hover {
-	background-color: #2650C0; 
-}
-
-.register-form .login-button button:active {
-	background-color: #20409D; 
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4), inset 0 3px 10px
-		rgba(0, 0, 0, 0.6);
-}
-</style>
 </head>
 <script type="text/javascript"
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

@@ -4,13 +4,8 @@
 
 <head>
 <link rel="stylesheet"
-	href="${pageContext.request.contextPath}/inc/viewsCss/FindIdStyle.css"
+	href="${pageContext.request.contextPath}/inc/viewsCss/FindIdStyle.css?v=230728"
 	type="text/css" />
-<style>
-.div-wrapper .element-3 {
-	cursor: pointer;
-}
-</style>
 </head>
 <body>
 	<script>	
